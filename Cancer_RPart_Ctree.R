@@ -25,7 +25,6 @@ dtree.pred <- predict(dtree, validation, type="class")
 dtree.pred[1]  
 dtree.pred[7]
 dtree.pred[19]
-dtree.pred
 
 # Model Evaluation
 tbl <- table(dtree.pred, validation$Class,dnn=c("Predicted", "Actual"))#dimension names,gives predicted and actual values of all values in prediction set
@@ -50,6 +49,8 @@ ctree.perf <- table( ctree.pred,validation$Class ,
                     dnn=c("Predicted", "Actual"))
 
 confusionMatrix(ctree.perf)
+
+##### Random Forest #######
 
 library(randomForest)
 rfmodel <- randomForest(Class ~ ., data = training, importance = TRUE)
