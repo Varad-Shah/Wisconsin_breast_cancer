@@ -8,11 +8,11 @@ set.seed(1992)#Ensuring the  same sample at each progeam run
 intrain<-createDataPartition(y=breast$Class,p=0.7,list=FALSE)# Partitioning the daata
 
 training   <- breast[ intrain , ] # Training 
-validation <- breast[-intrain , ] # validaation
+validation <- breast[-intrain , ] # validation
 
 library(rpart)
 
-dtree <- rpart(Class ~ ., data=training, method="class") # Model Buillding
+dtree <- rpart(Class ~ ., data=training, method="class") # Model Building
 
 
 library(rpart.plot)
